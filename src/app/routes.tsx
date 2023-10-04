@@ -4,7 +4,7 @@ import DashboardLayout from 'layouts/dashboardLayout/DashboardLayout';
 import Error404 from 'pages/error404/Error404';
 import Intro from 'pages/intro/Intro';
 import Login from 'pages/login/Login';
-import { Navigate } from 'react-router-dom';
+import { ProtectedRoute } from './ProtectedRoute';
 
 export const routes: Route[] = [
   {
@@ -24,11 +24,11 @@ export const routes: Route[] = [
     children: [
       {
         path: '',
-        element: <Navigate to="/intro" />,
+        element: <ProtectedRoute><Intro /></ProtectedRoute>,
       },
       {
         path: 'intro',
-        element: <Intro />,
+        element: <ProtectedRoute><Intro /></ProtectedRoute>,
       },
     ],
   },
