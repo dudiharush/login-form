@@ -20,7 +20,6 @@ type LoginFormValues = z.infer<typeof loginFormValidationSchema>;
 
 export default function Login() {
   const [login, { data, error: loginError }] = useLoginMutation();
-  debugger;
   const navigate = useNavigate();
 
   useEffect(() => {
