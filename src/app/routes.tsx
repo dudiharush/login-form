@@ -4,7 +4,7 @@ import DashboardLayout from 'layouts/dashboardLayout/DashboardLayout';
 import Error404 from 'pages/error404/Error404';
 import Intro from 'pages/intro/Intro';
 import Login from 'pages/login/Login';
-import { ProtectedRoute } from './ProtectedRoute';
+import { ProtectedRoutes } from './ProtectedRoutes';
 
 export const routes: Route[] = [
   {
@@ -20,17 +20,21 @@ export const routes: Route[] = [
   },
   {
     path: '/',
-    element: <DashboardLayout />,
+    element: <ProtectedRoutes />,
     children: [
-      {
-        path: '',
-        element: <ProtectedRoute><Intro /></ProtectedRoute>,
-      },
-      {
-        path: 'intro',
-        element: <ProtectedRoute><Intro /></ProtectedRoute>,
-      },
-    ],
+      {path: '',
+      element: <DashboardLayout />,
+      children: [
+        {
+          path: '',
+          element: <Intro />,
+        },
+        {
+          path: 'intro',
+          element: <Intro />,
+        },
+      ],}
+    ]
   },
   {
     path: '*',
