@@ -26,6 +26,12 @@ const theme = createTheme({
         fullWidth: true,
         InputLabelProps: {
           shrink: true,
+          sx: {
+            fontSize: 14,
+          },
+        },
+        inputProps: {
+          color: '#1C1B1F',
         },
       },
       styleOverrides: {
@@ -51,6 +57,9 @@ const theme = createTheme({
           '& label + div fieldset': {
             top: -5,
           },
+          '& .MuiOutlinedInput-input': {
+            padding: 7.5,
+          },
         },
       },
     },
@@ -69,13 +78,21 @@ const theme = createTheme({
       main: '#556cd6', // Redefine
     },
     secondary: {
-      main: '#19857b', // Redefine
+      main: '#BAA182', // Redefine
     },
     error: {
-      main: '#ff0000', // Redefine
+      main: '#BA1A1A', // Redefine
     },
     background: {
-      default: '#e0e0e0', // Redefine
+      default: '#F9F9FA', // Redefine
+    },
+    text: {
+      primary: '#2A2118',
+      secondary: '#1C1B1F',
+    },
+    action: {
+      active: '#4D4D4D',
+      hover: '#846E54',
     },
   },
 });
