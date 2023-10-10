@@ -1,17 +1,5 @@
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-
-const LinkButton = styled(Button)(({ theme }) => {
-  return {
-    color: theme.palette.action.active,
-    ':hover': {
-      backgroundColor: '#EBEBEC',
-    },
-    padding: 2,
-    borderRadius: 4
-  };
-}) as typeof Button;
-
 const SubmitButton = styled(Button)(({ theme }) => {
   return {
     marginTop: 8,
@@ -26,13 +14,12 @@ const SubmitButton = styled(Button)(({ theme }) => {
 }) as typeof Button;
 
 const Form = styled('form')({
-  width: '400px'
-})
+  width: '400px',
+});
 
 const styledComponents = {
-  LinkButton,
   SubmitButton,
-  Form
+  Form,
 };
 
 export default styledComponents;
