@@ -19,17 +19,17 @@ export default function Login() {
   }, [user, navigate]);
 
   return (
-    <Grid container direction="column" padding={6} justifyContent={'space-between'}>
+    <Grid container direction="column" padding={6} justifyContent='space-between'>
       <Grid item>
         <Grid container spacing={7}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <CardMedia component="img" alt="Cybellum" image={cybellumSign} sx={{ height: '55px', width: 'fit-content' }} />
-            <Typography variant="h1" sx={{ mt: 4 }} fontSize={'56px'}>
+            <Typography variant="h1" sx={{ mt: 4 }} fontSize='56px'>
               Welcome to the Product Security Platform
             </Typography>
             <LoginForm />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item sx={{display: { xs: 'none', md: 'block' } }} md={6}>
             <CardMedia component="img" alt="Digital Twins" image={monitor} sx={{ mt: 4, width: 300 }} />
           </Grid>
         </Grid>
