@@ -2,13 +2,13 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import MuiInputAdornment from '@mui/material/InputAdornment';
 
 type InputAdornmentProps = {
-    hasError: boolean
+    hasError?: boolean
 }
 
-export const InputAdornment = ({hasError}:InputAdornmentProps) => {
+export const InputAdornment = ({hasError = false}:InputAdornmentProps) => {
     return hasError ? (
         <MuiInputAdornment position="start">
-          <ErrorOutlineIcon color="error" />
+          <ErrorOutlineIcon color="error" titleAccess='error'/>
         </MuiInputAdornment>
       ) : null
 }
