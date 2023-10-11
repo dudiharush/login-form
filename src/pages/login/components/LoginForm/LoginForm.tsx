@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { FormHelperText, TextField } from '@mui/material';
-import InputAdornment from '@mui/material/InputAdornment';
+import {InputAdornment} from './InputAdornment';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 import { useLoginMutation } from 'api/auth/auth';
 import { useEffect } from 'react';
@@ -53,11 +53,7 @@ export function LoginForm() {
           return (
             <TextField
               InputProps={{
-                endAdornment: hasError ? (
-                  <InputAdornment position="start">
-                    <ErrorOutlineIcon color="error" />
-                  </InputAdornment>
-                ) : undefined,
+                endAdornment: <InputAdornment hasError={hasError} />
               }}
               helperText={fieldState.error?.message}
               error={hasError}
@@ -74,13 +70,9 @@ export function LoginForm() {
           const hasError = !!fieldState.error?.message || !!loginErrorMessage;
           return (
             <TextField
-              InputProps={{
-                endAdornment: hasError ? (
-                  <InputAdornment position="start">
-                    <ErrorOutlineIcon color="error" />
-                  </InputAdornment>
-                ) : undefined,
-              }}
+            InputProps={{
+              endAdornment: <InputAdornment hasError={hasError}/>
+            }}
               helperText={fieldState.error?.message}
               error={hasError}
               label="Password"
