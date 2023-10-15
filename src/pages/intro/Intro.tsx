@@ -10,7 +10,7 @@ export default function Intro() {
     <Styled.Box>
       <Card sx={{ maxWidth: 345, textAlign: 'center' }}>
         <CardContent>
-          <Styled.CardMedia component="img" alt="Cybellum" image={logo} />
+          <Styled.CardMedia component="img" alt="Cybellum-intro" image={logo} />
           <Typography gutterBottom variant="h5" component="div" sx={{ mt: 4 }}>
             First message:
           </Typography>
