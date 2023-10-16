@@ -1,10 +1,13 @@
 import { routes } from 'app/routes';
 import React from 'react';
-import { useRoutes } from 'react-router';
+import { RouterProvider, RouterProviderProps } from 'react-router';
+import { createBrowserRouter } from 'react-router-dom';
 
-function App() {
-  const content = useRoutes(routes);
-  return <React.Fragment>{content}</React.Fragment>;
+type AppProps = Partial<Pick<RouterProviderProps, 'router'>>
+
+function App({router = createBrowserRouter(routes)}:AppProps) {
+  return <RouterProvider router={router} fallbackElement={<div>Loading...</div>}
+  />;
 }
 
 export default App;
